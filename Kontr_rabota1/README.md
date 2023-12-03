@@ -6,10 +6,41 @@
 ### Описание работы программы:
 
 В начале программы инициализируется исходный массив строк ***Massiv1***.
-Затем вызывается метод **int GetNumbers3 (string[] Massiv)**.
+Затем вызывается метод **GetNumbers3 ()**.
+
+```
+int GetNumbers3 (string[] Massiv)
+{
+int count = 0;
+foreach (string s in Massiv)
+{
+    if (s.Length <= 3)
+    {
+        count+=1;
+    }
+}
+return count;
+```
 
 Этот метод получает на входе массив строк ***Massiv1*** и возвращает значение ***count***, равное количеству строк в массиве, длина которых меньше, либо равна 3 символам.
 
-Далее с помощье метода **string[] FilteredArray(string[] Massiv, int count)** из исходного массива ***Massiv1*** формируется новый массив ***Massiv2***, состоящий из ***count*** строк, длина которых меньше, либо равна 3 символам.
+Далее с помощье метода **FilteredArray()** из исходного массива ***Massiv1*** формируется новый массив ***Massiv2***, состоящий из ***count*** строк, длина которых меньше, либо равна 3 символам.
+
+```
+string[] FilteredArray(string[] Massiv, int count)
+{
+string[] Massiv2 = new string[count];
+int j =0;
+for (int i=0; i<Massiv1.Length; i++)
+{
+    if (Massiv1[i].Length<=3)
+    {
+        Massiv2[j]=Massiv1[i];
+        j++;
+    }
+}
+return Massiv2;
+}
+```
 
 После этого исходный и результирующий массивы ***Massiv1, Massiv2*** преобразуются в строки, разделенные пробелами и выводятся на экран терминала.
